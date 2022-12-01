@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Custom Notification Bars</title>
+
+    <!-- (A) LOAD CSS + JS -->
+    <link href="error-bar.css" rel="stylesheet">
+    <script src="error-bar.js"></script>
+  </head>
+  <body>
+    <!-- (B) HTML CONTAINER -->
+    <div id="demo"></div>
+
+    <!-- (C) FOR TESTING -->
+    <script>
+    let demo = document.getElementById("demo");
+    ebar({ target: demo, msg: "Plain" });
+    ebar({ lvl: 1, target: demo, msg: "Information" });
+    ebar({ lvl: 2, target: demo, msg: "Success" });
+    ebar({ lvl: 3, target: demo, msg: "Warning" });
+    ebar({ lvl: 4, target: demo, msg: "Error" });
+    </script>
+  </body>
+</html>
