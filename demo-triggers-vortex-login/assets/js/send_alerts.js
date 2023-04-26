@@ -57,7 +57,7 @@ function trigger() {
 
     var newRelicPayload = {
         "payload": {
-            "summary": "[Critical] Increased latency detected on the Website, High Page Load Error rates",
+            "summary": "[Critical] Increased latency detected on the login page, High Page Load Error rates",
             "source": "New Relic",
             "severity": "critical",
             "group": "Authentication",
