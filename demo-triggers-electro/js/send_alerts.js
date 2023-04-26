@@ -71,28 +71,41 @@ function sendChangeEvent(){
 function trigger(){
     // Now send alert storm...
 
-    // Zabbix alert
-    var zabbixPayload = {
+        // Mongo alert
+    var mongoAlertPayload = {
         "payload": {
-            "summary": "[Zabbix] java.lang.OutOfMemoryError: Java heap space",
-            "source": "Zabbix",
-            "severity": "warning",
-            "location" : "prod",
-            "component": "Checkout",
-            "group": "Checkout,Zabbix,Production,eCommerce,Checkout-Tier",
-            "class": "Zabbix"
-        },
-        "event_action": "trigger",
-        "client": "View in Zabbix",
-        "client_url": "www.zabbix.com",
-        "images": [{
-             "src": "https://chart.googleapis.com/chart?chs=600x400&chd=t:6,2,9,5,2,5,7,4,8,2,1&cht=lc&chds=a&chxt=y&chm=D,0033FF,0,0,5,1",
-             "href": "https://acme.pagerduty.com",
-             "alt": "This is a sample link"
-        }]
+            "summary": "Host 'acme-mongorepl1-sv1-c40 :: 179.21.24.50' is DOWN",
+            "source": "acme-mongorepl1-sv1-c40",
+            "severity": "critical",
+            "component": "Inventory",
+            "group": "MongoDB"
+        }
     }
+    sendAlert(mongoAlertPayload, "Mongo");
+    
 
-//    sendAlert(zabbixPayload, "Zabbix")
+    // Zabbix alert
+    // var zabbixPayload = {
+    //     "payload": {
+    //         "summary": "[Zabbix] java.lang.OutOfMemoryError: Java heap space",
+    //         "source": "Zabbix",
+    //         "severity": "warning",
+    //         "location" : "prod",
+    //         "component": "Checkout",
+    //         "group": "Checkout,Zabbix,Production,eCommerce,Checkout-Tier",
+    //         "class": "Zabbix"
+    //     },
+    //     "event_action": "trigger",
+    //     "client": "View in Zabbix",
+    //     "client_url": "www.zabbix.com",
+    //     "images": [{
+    //          "src": "https://chart.googleapis.com/chart?chs=600x400&chd=t:6,2,9,5,2,5,7,4,8,2,1&cht=lc&chds=a&chxt=y&chm=D,0033FF,0,0,5,1",
+    //          "href": "https://acme.pagerduty.com",
+    //          "alt": "This is a sample link"
+    //     }]
+    // }
+
+    // sendAlert(zabbixPayload, "Zabbix")
 
     // New Relic alert
     var newRelicPayload = {
@@ -119,22 +132,13 @@ function trigger(){
         }]
     }
 
-    sendAlert(newRelicPayload, "NewRelic1")
+    // sendAlert(newRelicPayload, "NewRelic1")
+    setTimeout(function() { sendAlert(newRelicPayload, "NewRelic1"); }, 1000); 
     setTimeout(function() { sendAlert(newRelicPayload, "NewRelic2"); }, 5000); // send again in 5 seconds
     setTimeout(function() { sendAlert(newRelicPayload, "NewRelic3"); }, 10000); // and again in 10 seconds
 
 
-    // Mongo alert
-    var mongoAlertPayload = {
-        "payload": {
-            "summary": "Host 'acme-mongorepl1-sv1-c40 :: 179.21.24.50' is DOWN",
-            "source": "acme-mongorepl1-sv1-c40",
-            "severity": "critical",
-            "component": "Inventory",
-            "group": "MongoDB"
-        }
-    }
-    setTimeout(function() { sendAlert(mongoAlertPayload, "Mongo"); }, 1000);
+
 
 
     // Solarwinds alert
