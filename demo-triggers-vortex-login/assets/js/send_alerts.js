@@ -78,7 +78,8 @@ function trigger() {
             "alt": "This is a sample link"
         }]
     }
-    sendAlert(newRelicPayload, "NewRelic")
+    
+    setTimeout(function() { sendAlert(newRelicPayload, "NewRelic"); }, 1000);
 
     // Instana alert
     var instanaPayload = {
