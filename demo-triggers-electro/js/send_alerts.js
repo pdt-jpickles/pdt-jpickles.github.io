@@ -122,7 +122,8 @@ function trigger(){
                 "AWSAccountId": "84862478935",
                 "NewStateValue": "ALARM",
                 "OldStateValue": "INSUFFICIENT_DATA",
-                "Region": "US West (N. California)"
+                "Region": "US West (N. California)",
+                "hostname":"PROD-ip-10-64-0-111"
             }
         },
         "images": [{
