@@ -85,7 +85,7 @@ function trigger() {
     // Instana alert
     var instanaPayload = {
         "payload": {
-            "summary": "Instana - Allocatable memory too low",
+            "summary": "Allocatable memory too low",
             "source": "Instana",
             "severity": "warning",
             "location" : "prod", 
@@ -114,7 +114,7 @@ function trigger() {
     // Dynatrace alert
     var dynatracePayload = {
         "payload": {
-            "summary": "Dynatrace - High Memory usage on Host AUTHSVR00001",
+            "summary": "High Memory usage on Host AUTHSVR00001",
             "source": "Dynatrace",
             "severity": "warning",
             "location" : "prod",
@@ -138,13 +138,15 @@ function trigger() {
             "alt": "Dynatrace"
         }]
     }
-    setTimeout(function() { sendAlert(dynatracePayload, "Dynatrace"); }, 2000);
+    setTimeout(function() { sendAlert(dynatracePayload, "Dynatrace"); }, 3000);
+    setTimeout(function() { sendAlert(dynatracePayload, "Dynatrace1"); }, 4000);
+    setTimeout(function() { sendAlert(dynatracePayload, "Dynatrace2"); }, 6000);
 
     
     // Datadog alert
     var datadogPayload = {
         "payload": {
-            "summary": "DataDog - Long history length in xdb (possible stuck transaction)",
+            "summary": "Node down - cannot connect to SQLCLUSTER01-sv1-c40",
             "source": "DataDog",
             "severity": "warning",
             "location" : "prod",
@@ -165,12 +167,12 @@ function trigger() {
             "alt": "Link to DataDog"
         }]
     }
-    setTimeout(function() { sendAlert(datadogPayload, "DataDog"); }, 3000);
+    setTimeout(function() { sendAlert(datadogPayload, "DataDog"); }, 5000);
 
     // SignalFX Alert
     var signalfxPayload = {
         "payload": {
-            "summary": "SignalFX - CPU too high - AuthSvr001,AuthSvr002",
+            "summary": "CPU utilization > 99% - AuthSvr001,AuthSvr002",
             "source": "SignalFX",
             "severity": "warning",
             "location" : "prod",
@@ -186,7 +188,9 @@ function trigger() {
             "alt": "This is a sample link"
         }]
     }
-    setTimeout(function() { sendAlert(signalfxPayload, "SignalFX"); }, 3000);
+    setTimeout(function() { sendAlert(signalfxPayload, "SignalFX"); }, 5000);
+    setTimeout(function() { sendAlert(signalfxPayload, "SignalFX1"); }, 7000);
+    setTimeout(function() { sendAlert(signalfxPayload, "SignalFX2"); }, 9000);
 
     
     // Zabbix
@@ -208,7 +212,7 @@ function trigger() {
               "alt": "This is a sample link"
         }]
     }
-    setTimeout(function() { sendAlert(zabbixAlertPayload, "Zabbix"); }, 3000);
+    // setTimeout(function() { sendAlert(zabbixAlertPayload, "Zabbix"); }, 3000);
 
 }
 
