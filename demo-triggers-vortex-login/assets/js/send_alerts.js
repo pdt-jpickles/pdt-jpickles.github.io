@@ -69,7 +69,7 @@ function trigger() {
                 "AWSAccountId": "84862478935",
                 "NewStateValue": "ALARM",
                 "OldStateValue": "INSUFFICIENT_DATA",
-                "Region": "US West (N. California)",
+                "Region": "Europe (Ireland)",
                 "hostname":"PROD-ip-10-64-0-111"
             }
         },
@@ -184,8 +184,8 @@ function trigger() {
         "client_url": "www.SignalFX.com",
         "images": [{
             "src": "https://chart.googleapis.com/chart?chs=600x400&chd=t:6,2,9,5,2,5,7,4,8,2,1&cht=lc&chds=a&chxt=y&chm=D,0033FF,0,0,5,1",
-            "href": "https://acme.pagerduty.com",
-            "alt": "This is a sample link"
+            "href": "https://acme.pagerduty.com"
+
         }]
     }
     setTimeout(function() { sendAlert(signalfxPayload, "SignalFX"); }, 5000);
@@ -208,8 +208,7 @@ function trigger() {
         "client_url": "www.zabbix.com",
         "images": [{
               "src": "https://chart.googleapis.com/chart?chs=600x400&chd=t:6,2,9,5,2,5,7,4,8,2,1&cht=lc&chds=a&chxt=y&chm=D,0033FF,0,0,5,1",
-              "href": "https://acme.pagerduty.com",
-              "alt": "This is a sample link"
+              "href": "https://acme.pagerduty.com"
         }]
     }
     // setTimeout(function() { sendAlert(zabbixAlertPayload, "Zabbix"); }, 3000);

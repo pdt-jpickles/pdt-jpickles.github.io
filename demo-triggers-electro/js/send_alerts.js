@@ -106,7 +106,7 @@ function trigger(){
     // }
 
     // sendAlert(zabbixPayload, "Zabbix")
-
+ 
     // New Relic alert
     var newRelicPayload = {
         "payload": {
@@ -122,14 +122,13 @@ function trigger(){
                 "AWSAccountId": "84862478935",
                 "NewStateValue": "ALARM",
                 "OldStateValue": "INSUFFICIENT_DATA",
-                "Region": "US West (N. California)",
+                "Region": "Europe (Ireland)",
                 "hostname":"PROD-ip-10-64-0-111"
             }
         },
         "images": [{
             "src": "https://pdt-gurinder.s3.amazonaws.com/images/metrics/NRErrors2.png",
-            "href": "https://acme.pagerduty.com",
-            "alt": "This is a sample link"
+            "href": "https://acme.pagerduty.com"
         }]
     }
 
