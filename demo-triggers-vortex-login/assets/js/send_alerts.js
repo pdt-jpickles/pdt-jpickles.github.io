@@ -34,8 +34,7 @@ function trigger() {
         "client_url": "www.SQLMonitor.com",
         "images": [{
             "src": "https://chart.googleapis.com/chart?chs=600x400&chd=t:6,2,9,5,2,5,7,4,8,2,1&cht=lc&chds=a&chxt=y&chm=D,0033FF,0,0,5,1",
-            "href": "https://acme.pagerduty.com",
-            "alt": "This is a sample link"
+            "href": "https://acme.pagerduty.com"
         }]
     }
 
@@ -75,8 +74,7 @@ function trigger() {
         },
         "images": [{
             "src": "https://s3.eu-west-2.amazonaws.com/www.timchinchen.co.uk/DemoImages/NRErrors2.png",
-            "href": "https://acme.pagerduty.com",
-            "alt": "This is a sample link"
+            "href": "https://acme.pagerduty.com"
         }]
     }
     
