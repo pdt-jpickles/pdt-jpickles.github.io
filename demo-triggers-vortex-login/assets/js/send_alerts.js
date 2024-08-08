@@ -52,7 +52,8 @@ function trigger() {
             "group": "Accounts"
         }
     }
-    sendAlert(solarAlertPayload, "Solarwinds")
+    setTimeout(function() { sendAlert(solarAlertPayload, "Solarwinds"); }, 5000);
+
 
     var newRelicPayload = {
         "payload": {
