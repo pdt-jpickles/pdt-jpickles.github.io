@@ -39,8 +39,9 @@ function trigger() {
     }
 
     sendAlert(SQLMonitorPayload, "SQLMonitor")
-//    setTimeout(function() { sendAlert(newRelicPayload, "NewRelic2"); }, 5000); // send again in 5 seconds
-//    setTimeout(function() { sendAlert(newRelicPayload, "NewRelic3"); }, 10000); // and again in 10 seconds
+    setTimeout(function() { sendAlert(SQLMonitorPayload, "SQLMonitor2"); }, 5000); // send again in 5 seconds
+    setTimeout(function() { sendAlert(SQLMonitorPayload, "SQLMonitor3"); }, 70000); // and again in 10 seconds
+    setTimeout(function() { sendAlert(SQLMonitorPayload, "SQLMonitor4"); }, 10000); // and again in 10 seconds
     
     // Send Solarwinds alert
     var solarAlertPayload = {
@@ -53,6 +54,8 @@ function trigger() {
         }
     }
     setTimeout(function() { sendAlert(solarAlertPayload, "Solarwinds"); }, 5000);
+    setTimeout(function() { sendAlert(solarAlertPayload, "Solarwinds2"); }, 8000);
+    setTimeout(function() { sendAlert(solarAlertPayload, "Solarwinds3"); }, 10000);
 
 
     var newRelicPayload = {
@@ -167,6 +170,8 @@ function trigger() {
         }]
     }
     setTimeout(function() { sendAlert(datadogPayload, "DataDog"); }, 5000);
+    setTimeout(function() { sendAlert(datadogPayload, "DataDog2"); }, 7000);
+    setTimeout(function() { sendAlert(datadogPayload, "DataDog3"); }, 9000);
 
     // SignalFX Alert
     var signalfxPayload = {
