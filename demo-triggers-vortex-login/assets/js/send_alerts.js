@@ -57,6 +57,20 @@ function trigger() {
     setTimeout(function() { sendAlert(solarAlertPayload, "Solarwinds2"); }, 8000);
     setTimeout(function() { sendAlert(solarAlertPayload, "Solarwinds3"); }, 10000);
 
+    // Send Solarwinds alert
+    var solarAlertPayload2 = {
+        "payload": {
+            "summary": "Host 'acme-SQLCLUSTER01-sv1-c40 :: 179.21.24.50' Error NETWORK [conn11] Failed to connect to 127.0.0.1:27019, in(checking socket for error after poll), reason: No connection could be made because the target machine actively refused it.",
+            "source": "Solarwinds",
+            "severity": "error",
+            "component": "profiles",
+            "group": "profiles",
+            "custom_details": {
+                "service": "User Profiles"
+            }
+        }
+    }
+    setTimeout(function() { sendAlert(solarAlertPayload2, "Solarwinds4"); }, 10000);
 
     var newRelicPayload = {
         "payload": {
