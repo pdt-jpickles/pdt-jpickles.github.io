@@ -286,7 +286,7 @@ function trigger() {
         }
     }; 
     
-    setTimeout(function() { sendAlert(vortexAlertPayload, "Vortex"); }, 750000);
+    setTimeout(function() { sendAlert(vortexAlertPayload, "Vortex"); }, 75000);
 
     
 }
