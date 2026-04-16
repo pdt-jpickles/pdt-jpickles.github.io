@@ -231,6 +231,64 @@ function trigger() {
     }
     // setTimeout(function() { sendAlert(zabbixAlertPayload, "Zabbix"); }, 3000);
 
+        var openshiftAlertPayload = {
+        "payload": {
+            "summary": "OPENSHIFT | Cluster Pods Resources-telemetry-agent | app-telemetry-agent-wmm8m | telemetry cpu_percentage at 2025-09-09 09:12:01 CESTs",
+            "source": "prometheus-k8s-monitoring.apps.cluster1.internal.local",
+            "severity": "warning",
+            "timestamp": "2025-09-09T07:12:01Z",
+            "component": "kubernetes",
+            "group": "authentication",
+            "class": "resource",
+            "custom_details": {
+                "AppFolder": "Trading/Clusters/West",
+                "Assignment Group": "Service Operations",
+                "Datapoint": "cpu_percentage",
+                "Datasource": "Cluster Pods Resources-telemetry-agent | app-telemetry-agent-wmm8m | telemetry",
+                "Description": "Pod app-telemetry-agent-wmm8m is now at 99.724% CPU usage.",
+                "Environment": "DR",
+                "LM_REF": "LMD210494319|prometheus-k8s-monitoring.apps.cluster1.internal.local|Cluster Pods Resources-telemetry-agent | app-telemetry-agent-wmm8m | telemetry|cpu_percentage",
+                "Market_App": "TRADING | OPENSHIFT",
+                "Resource_ID": "CI-9753324",
+                "Threshold": ">= 85 90 90",
+                "Value": "100.0246",
+                "Full_Group_Context": "16. Collectors - OPS/Current Collectors/Trading_DR_Linux/cluster1-coll-w01..."
+            }
+        },
+        "links": [{
+            "href": "https://prometheus-k8s-monitoring.apps.cluster1.internal.local",
+            "text": "Source Console"
+        }]
+    }
+    setTimeout(function() { sendAlert(openshiftAlertPayload, "OpenShift"); }, 60000);
+
+    var vortexAlertPayload = {
+        "payload": {
+            "summary": "vortex-frontend: deployment has unavailable replicas",
+            "source": "prod-datapipe03.vortex.com",
+            "severity": "warning",
+            "timestamp": "2015-07-17T08:42:58.315Z",
+            "component": "kubernetes",
+            "group": "authentication",
+            "class": "resource",
+            "custom_details": {
+                "container": "kube-state-metrics",
+                "instance": "100.65.216.34:8080",
+                "namespace": "vortex",
+                "deployment": "vortex-frontend",
+                "num_firing": 1,
+                "num_resolved": 0,
+                "service": "myservice",
+                "region": "Europe (Ireland)",
+                "hostname": "PROD-ip-10-64-0-111",
+                "noex": "eu-w1-k8s"
+            }
+        }
+    }; 
+    
+    setTimeout(function() { sendAlert(vortexAlertPayload, "Vortex"); }, 750000);
+
+    
 }
 
 function add_error_msg(){
